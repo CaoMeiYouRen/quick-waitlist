@@ -1,31 +1,33 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import { Toaster } from "react-hot-toast";
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import './globals.css'
+import { Toaster } from 'react-hot-toast'
+import React from 'react'
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] })
 
-const siteName = process.env.NEXT_PUBLIC_SITE_NAME ?? "Quick Waitlist";
+const siteName = process.env.NEXT_PUBLIC_SITE_NAME ?? 'Quick Waitlist'
 const siteDescription =
-  process.env.NEXT_PUBLIC_SITE_DESCRIPTION ??
-  "Quick Waitlist and coming soon page for your SAAS and website.";
+    process.env.NEXT_PUBLIC_SITE_DESCRIPTION ??
+    'Quick Waitlist and coming soon page for your SAAS and website.'
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const metadata: Metadata = {
-  title: siteName,
-  description: siteDescription,
-};
+    title: siteName,
+    description: siteDescription,
+}
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode
 }>) {
-  return (
-    <html lang="en">
-      <body className={`${inter.className} bg-gradient-to-b from-[#fff6df]  to-[#FEFBF0]`}>
-        <main className="flex justify-center items-center min-h-screen">{children}</main>
-        <Toaster />
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en">
+            <body className={`${inter.className} bg-gradient-to-b from-[#fff6df]  to-[#FEFBF0]`}>
+                <main className="flex justify-center items-center min-h-screen">{children}</main>
+                <Toaster />
+            </body>
+        </html>
+    )
 }
