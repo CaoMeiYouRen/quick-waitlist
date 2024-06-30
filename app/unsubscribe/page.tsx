@@ -1,5 +1,5 @@
 'use client'
-import React, { useTransition } from 'react'
+import React, { useTransition, Suspense } from 'react'
 import Mail from '/public/mail.svg'
 import Image from 'next/image'
 import toast from 'react-hot-toast'
@@ -98,4 +98,8 @@ const UnsubscribePage = () => {
     )
 }
 
-export default UnsubscribePage
+const UnsubscribePageWrapper = () => <Suspense>
+    <UnsubscribePage />
+</Suspense>
+
+export default UnsubscribePageWrapper 
