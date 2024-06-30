@@ -3,9 +3,12 @@ import React, { useTransition } from "react";
 import Mail from "/public/mail.svg";
 import Image from "next/image";
 import toast from "react-hot-toast";
+import { useTranslation } from 'next-i18next';
 
 const EmailForm = () => {
   const [isPending, startTransaction] = useTransition();
+
+  const { t } = useTranslation('common');
 
   const handleSubmit = async (event: React.SyntheticEvent) => {
     event.preventDefault();
@@ -26,10 +29,10 @@ const EmailForm = () => {
 
         if (res.ok) {
           target.reset();
-          toast.success("Thank you for subscribing 🎉");
+          toast.success("感谢您的订阅！🎉");
         } else {
           console.error("Error:", res.status, res.statusText);
-          toast.error("Something went wrong");
+          toast.error("出现了一些问题");
         }
       } catch (error) {
         console.error("Fetch error:", error);
@@ -53,7 +56,7 @@ const EmailForm = () => {
           name="email"
           id="email"
           required
-          placeholder="Join our waiting list..."
+          placeholder="加入我们的等待名单..."
           className="lg:w-[300px] py-2 px-3 rounded-md text-base pl-8 shadow-button-shadow border bg-white/50 focus-visible:outline-none focus-visible:bg-white"
         />
       </div>
@@ -62,7 +65,8 @@ const EmailForm = () => {
         type="submit"
         className="bg-gradient-to-b from-white to-[#f8eedb] text-[#482307] shadow-button-shadow font-semibold py-2 px-3 rounded-md text-base transition-all duration-200 "
       >
-        Subscribe
+        {/* {t('emailForm.button')} */}
+        订阅
       </button>
     </form>
   );

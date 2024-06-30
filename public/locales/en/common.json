@@ -1,0 +1,14 @@
+{
+    "welcome": "Welcome to my website!",
+    "privacyPolicyPage": {
+        "title": "Privacy Policy",
+        "privacyPolicyPlaceholder": "Add Privacy Policy From ENV",
+        "backToHome": "Back to home"
+    },
+    "emailForm": {
+        "placeholder": "Join our waiting list...",
+        "button": "Subscribe",
+        "successToast": "Thank you for subscribing 🎉",
+        "errorToast": "Something went wrong"
+    }
+}

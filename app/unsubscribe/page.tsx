@@ -7,7 +7,7 @@ const UnsubscribePage = () => {
   const handleSubmit = () => {
     startTransaction(async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/resend", {
+        const res = await fetch("/api/resend", {
           method: "POST",
           body: JSON.stringify(""),
           headers: { "Content-Type": "application/json" },
@@ -30,14 +30,14 @@ const UnsubscribePage = () => {
         <div className="flex flex-col items-center p-4 md:p-12">
           <div className="text-center mb-4 lg:mb-6">
             <h1 className="text-3xl md:text-[55px] font-semibold leading-none md:leading-tight">
-              Sorry to see you go!
+              很抱歉看到你离开
             </h1>
           </div>
 
           {/* form to unsubscribe */}
 
-          <button className="bg-black text-white px-2.5 py-1.5 rounded-md text-base transition-all duration-200 hover:bg-black/60">
-            Unsubscribe
+          <button className="bg-black text-white px-2.5 py-1.5 rounded-md text-base transition-all duration-200 hover:bg-black/60" onClick={handleSubmit}>
+            退订
           </button>
         </div>
         {/* element */}

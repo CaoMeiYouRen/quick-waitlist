@@ -14,7 +14,7 @@ export const EmailTemplate = () => {
   return (
     <Html>
       <Head />
-      <Preview>{`You’re on the waitlist for ${process.env.NEXT_PUBLIC_SITE_NAME}`}</Preview>
+      <Preview>{`你在 ${process.env.NEXT_PUBLIC_SITE_NAME} 的等待名单上`}</Preview>
       <Body style={main}>
         <Container style={container}>
           <Img
@@ -25,19 +25,30 @@ export const EmailTemplate = () => {
             alt="Logo"
           />
           <Section>
+            <Text style={text}>
+              亲爱的用户
+            </Text>
             <Text
               style={text}
-            >{`Big welcome and thanks for subscribing ${process.env.NEXT_PUBLIC_SITE_NAME}`}</Text>
+            >{`非常欢迎和感谢订阅 ${process.env.NEXT_PUBLIC_SITE_NAME}`}</Text>
             <Text style={text}>
-              🚀 The mission is to send out a stylish and simple newsletter that
-              help busy creatives to stay updated without cluttering their
-              inbox.
+              RSS Impact 是一个支持 Hook 的 RSS 订阅工具。
             </Text>
             <Text style={text}>
-              🛳 All new AI resources and tools are carefully curated, with only
-              a handful of the best being shipped.
+              RSS Impact 具有以下亮点:<br />
+              支持多种形式的 Hook,包括推送通知、Webhook、下载、BitTorrent 和 AI 大模型等,满足您各种订阅需求。<br />
+              推送通知支持多种渠道,如 Server 酱、邮件、钉钉机器人等,并支持 Markdown 格式。<br />
+              BitTorrent Hook 可自动下载资源,并支持按体积过滤。<br />
+              Webhook 支持多种 HTTP 方法调用。<br />
+              下载 Hook 支持按 MD5 和后缀名过滤资源。<br />
+              AI Hook 可对内容进行总结,并支持在总结后推送。<br />
+              支持正则替换 Hook,可用于替换链接为代理地址。<br />
+              支持自定义查询并转换为 RSS,还可将 AI 总结输出到正文中。<br />
+              支持从 OPML 文件导入/导出订阅。<br />
+              支持 Docker 一键部署,并集成 Redis 缓存和 SQLite 数据库。<br />
+              支持配置代理。<br />
             </Text>
-            <Text style={text}>Expect a new shipment every Tuesday!</Text>
+            <Text style={text}>每周六会有一次版本发布（如果存在更新的话）</Text>
           </Section>
         </Container>
       </Body>

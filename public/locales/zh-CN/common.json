@@ -1,0 +1,14 @@
+{
+    "welcome": "欢迎访问我的网站！",
+    "privacyPolicyPage": {
+        "title": "隐私政策",
+        "privacyPolicyPlaceholder": "从环境变量添加隐私政策",
+        "backToHome": "返回主页"
+    },
+    "emailForm": {
+        "placeholder": "加入我们的等待名单...",
+        "button": "订阅",
+        "successToast": "感谢您的订阅！🎉",
+        "errorToast": "出现了一些问题"
+    }
+}
