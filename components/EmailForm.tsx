@@ -23,7 +23,7 @@ const EmailForm = () => {
             try {
                 const res = await fetch('/api/resend', {
                     method: 'POST',
-                    body: JSON.stringify({ email }),
+                    body: JSON.stringify({ email, unsubscribed: false }),
                     headers: { 'Content-Type': 'application/json' },
                 })
 
@@ -41,7 +41,7 @@ const EmailForm = () => {
     }
     return (
         <form
-            onSubmit={(e) => handleSubmit(e)}
+            onSubmit={handleSubmit}
             className="flex justify-center items-center gap-2"
         >
             <div className="relative">
@@ -66,7 +66,7 @@ const EmailForm = () => {
                 className="bg-gradient-to-b from-white to-[#f8eedb] text-[#482307] shadow-button-shadow font-semibold py-2 px-3 rounded-md text-base transition-all duration-200 "
             >
                 {/* {t('emailForm.button')} */}
-        订阅
+                订阅
             </button>
         </form>
     )
